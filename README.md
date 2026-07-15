@@ -4,6 +4,12 @@
 
 [English](README_en.md) | [官方 Cookbook](https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide) | MIT License
 
+示例图片：
+<img width="600" height="900" alt="new_case051" src="https://github.com/user-attachments/assets/4e800f13-4cf5-4646-acae-8626fe88b9ef" />
+
+使用skills生成提示词：
+<img width="1086" height="1448" alt="9b5afbef-814c-4c6c-a1ee-288b2580e091" src="https://github.com/user-attachments/assets/97aa1397-f2f9-4d95-8bd8-ad21db9d7233" />
+
 本项目面向需要让 IDE 编写图片提示词的工作流：输入自然语言需求后，使用 `gpt-image-prompt-web` 生成可复制到 ChatGPT 网页端的英文提示词，或使用 `gpt-image-prompt-api` 生成 `gpt-image-2` Image API 的参数和 Python 示例。
 
 ## 内容范围
