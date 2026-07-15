@@ -1,41 +1,50 @@
-# 提示词速查表 | Prompt Cheatsheet
+# Prompt 速查表
 
-按场景分类的 GPT Image 2 提示词模板速查，涵盖全部 23 个案例。
+完整官方提示词位于 [docs/](../docs/README.md) 的 23 个用例目录。本表只保留选择路径和最小结构，避免形成第二套正文。
 
-## 生成模式 (Generate)
+## 生成
 
-| 场景 | 模式 | 提示词模板（精简版） | 关键参数 |
-|------|------|---------------------|---------|
-| 信息图表 Infographic | 生成 | Create a detailed Infographic of [主题]. From [步骤1], to [步骤2], etc. | quality="high" |
-| 图片翻译 Translation | 生成 | Translate the text in the image to [目标语言]. Do not change any other aspect. | input_fidelity="high" |
-| 照片级写实 Photorealistic | 生成 | Create a photorealistic [场景]. [人物细节]. Shot like a [相机参数]. | quality="high" |
-| 世界知识 World Knowledge | 生成 | Create a realistic [场景] in [地点] on [日期]. Photorealistic, period-accurate. | quality="high" |
-| Logo 生成 Logo Generation | 生成 | Create an original, non-infringing logo for [品牌]. [风格描述]. Flat design. | n=4, background="opaque" |
-| 广告生成 Ad Generation | 生成 | Give me a [风格] ad for [品牌]. Tagline: "[标语]". [受众和氛围描述]. | quality="high" |
-| 故事转漫画 Story to Comic | 生成 | Create a [面板数] comic-style reel with [面板数] panels. Panel 1: [场景]... | - |
-| UI 模型 UI Mockup | 生成 | Create a realistic mobile app UI mockup for [产品]. [界面元素描述]. Place in [设备框架]. | quality="high" |
-| 科学/教育 Scientific/Educational | 生成 | Create a [学科] diagram titled "[标题]" for [受众]. [内容要求]. Avoid tiny text. | quality="high" |
-| 幻灯片/图表 Slides/Charts | 生成 | Create one [类型] slide titled "[标题]". [内容要求]. Avoid [避免的设计元素]. | quality="high" |
-| 节日贺卡 Holiday Card | 生成 | Create a [节日] card illustration. Scene: [场景]. Mood: [氛围]. Style: [风格]. Constraints: [约束]. | quality="high" |
-| 收藏手办 Collectible Figure | 生成 | Create a collectible [类型] of [描述]. Concept: [概念]. Style: [风格]. Constraints: [约束]. | quality="high" |
+| 场景 | 章节 | 首要写清 |
+|---|---|---|
+| 信息图 | [4.1](../docs/04-generate/01-infographics/) | 主题、受众、步骤、关系、标签和版式 |
+| 图像文字翻译 | [4.2](../docs/04-generate/02-translation-in-images/) | 目标语言，以及“只改变文字” |
+| 照片级写实 | [4.3](../docs/04-generate/03-photorealistic/) | 人物/主体、动作、材质、景别、光线和真实瑕疵 |
+| 世界知识 | [4.4](../docs/04-generate/04-world-knowledge/) | 地点、日期、时代服装、建筑和工具 |
+| Logo | [4.5](../docs/04-generate/05-logo-generation/) | 原创、轮廓、负空间、颜色和大小可读性 |
+| 广告 | [4.6](../docs/04-generate/06-ads-generation/) | 品牌、受众、视觉钩子、版式和唯一精确文案 |
+| 漫画 | [4.7](../docs/04-generate/07-story-to-comic/) | 面板数量、每格动作、角色一致性和叙事顺序 |
+| UI | [4.8](../docs/04-generate/08-ui-mockups/) | 内容、导航、操作、排版和设备外框 |
+| 科学/教育图 | [4.9](../docs/04-generate/09-scientific-educational/) | 标题、组件、箭头、精确标签和受众层级 |
+| 幻灯片/图表 | [4.10](../docs/04-generate/10-slides-charts/) | 关键结论、数据、图表、脚注和可比较的层级 |
 
-## 编辑模式 (Edit)
+## 编辑
 
-| 场景 | 模式 | 提示词模板（精简版） | 关键参数 |
-|------|------|---------------------|---------|
-| 风格迁移 Style Transfer | 编辑 | Use the same style from the input image and generate [新内容]. | - |
-| 虚拟试穿 Virtual Try-On | 编辑 | Edit the image to dress the person using the provided clothing. Do not change [锁定特征]. | input_fidelity="high" |
-| 素描转图像 Sketch to Image | 编辑 | Turn this drawing into a photorealistic image. Preserve [保持要素]. Do not add new elements. | input_fidelity="high", quality="high" |
-| 产品模型 Product Mockup | 编辑 | Extract the product and place on a plain white opaque background. Preserve [保持要素]. | background="opaque", input_fidelity="high" |
-| 营销创意 Marketing Creative | 编辑 | Create a realistic [广告类型] of [产品] on [场景]. Text (EXACT): "[文案]". | quality="high" |
-| 光照天气 Lighting/Weather | 编辑 | Make it look like a [天气/时间] with [效果]. | input_fidelity="high" |
-| 物品移除 Object Removal | 编辑 | Remove [物体] from [位置]. Do not change anything else. | input_fidelity="high" |
-| 人物插入 Person Insertion | 编辑 | Generate a [场景] where this person is [动作]. [人物和场景细节]. | input_fidelity="high", quality="high" |
-| 多图合成 Multi-Image Compositing | 编辑 | Place [物体] from the second image into the setting of image 1. Do not change anything else. | input_fidelity="high" |
-| 室内替换 Interior Replacement | 编辑 | In this room photo, replace ONLY [旧物体] with [新物体]. Preserve [保持要素]. | input_fidelity="high" |
+| 场景 | 章节 | 首要写清 |
+|---|---|---|
+| 风格迁移 | [5.1](../docs/05-edit/01-style-transfer/) | 参考图的媒介、线条、色彩和新主体 |
+| 虚拟试穿 | [5.2](../docs/05-edit/02-virtual-try-on/) | 人物图、服装图，以及必须锁定的身份特征 |
+| 草图转图像 | [5.3](../docs/05-edit/03-drawing-to-image/) | 需要保留的布局、比例、透视和主体位置 |
+| 产品模型 | [5.4](../docs/05-edit/04-product-mockups/) | 产品几何、材质、颜色、标签和边缘 |
+| 营销创意 | [5.5](../docs/05-edit/05-marketing-creatives/) | 产品、环境、光线、透视和精确文案 |
+| 光照/天气 | [5.6](../docs/05-edit/06-lighting-weather/) | 唯一环境变化和所有保持项 |
+| 物体移除 | [5.7](../docs/05-edit/07-object-removal/) | 对象位置、背景重建和“不要改变其他内容” |
+| 人物插入 | [5.8](../docs/05-edit/08-insert-person-scene/) | 人物身份、目标场景、尺度、透视、光线和阴影 |
+| 多图合成 | [5.9](../docs/05-edit/09-multi-image-compositing/) | 每张图角色、元素移动方向和目标位置 |
 
-## 生成 + 编辑混合模式 (Generate + Edit)
+## 最小结构
 
-| 场景 | 模式 | 提示词模板（精简版） | 关键参数 |
-|------|------|---------------------|---------|
-| 儿童绘本 Children's Book | 生成+编辑 | Step1: 创建角色锚点. Step2: 使用 edit 模式传入角色图保持一致性. | quality="high", input_fidelity="high" |
+```text
+Create or edit [the target image].
+
+Subject / Change:
+[What the image should show or the only requested change]
+
+Composition / Visual direction:
+[Framing, viewpoint, materials, style, lighting, and color]
+
+Preserve:
+[Identity, geometry, pose, layout, labels, and unrelated elements]
+
+Constraints:
+[Exact text, exclusions, and no watermark or extra text]
+```

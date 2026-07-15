@@ -1,78 +1,48 @@
-# 🎨 GPT Image Official Prompting Guide
+# GPT Image Official Prompting Guide
 
-> Complete Chinese translation + runnable code examples for OpenAI's official GPT Image Generation Models Prompting Guide
+> Chinese translation, official examples, and a local asset index based on OpenAI Cookbook's GPT Image Generation Models Prompting Guide.
 
-[中文](README.md) | MIT License
+[中文](README.md) | [Official Cookbook](https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide) | MIT License
 
----
+This repository supports an IDE-first workflow for image prompting. Use `gpt-image-prompt-web` to turn a natural-language request into an English prompt that can be copied into ChatGPT, or use `gpt-image-prompt-api` for a `gpt-image-2` Image API prompt, parameters, and Python example.
 
-## 📖 About
+## Scope
 
-This is an open-source整理 project of OpenAI's official "GPT Image Generation Models Prompting Guide", featuring:
+- Six official chapters with the English source content and Chinese translation;
+- 23 official use cases: 4.1–4.10 Generate, 5.1–5.9 Edit, and 6.1–6.4 Additional workflows;
+- 37 unique image assets shown on the official page, stored in `docs/assets/official-cookbook/` without recompression;
+- `README.md`, `prompt.md`, Python code, and local image role indexes for every use-case directory;
+- `manifest.json` with each asset's official URL, local path, chapter, input/output role, retrieval time, and SHA-256.
 
-- 📝 **24 official prompt templates** — bilingual (EN/CN), covering both generate and edit modes
-- 🐍 **Runnable Python code** — based on OpenAI SDK, ready to use
-- 📋 **Cheat sheets** — prompt templates, API params, best practices at a glance
-- 📚 **Detailed docs** — 6-chapter complete guide, from beginner to advanced
+## Documentation
 
-## ✨ Use Cases
+| Chapter | Contents |
+|---|---|
+| [Chapter 1](docs/01-introduction/README.md) | Introduction, `gpt-image-2` capabilities, size constraints, and migration context |
+| [Chapter 2](docs/02-prompting-fundamentals/README.md) | Prompt structure, constraints, text, people, multi-image references, and iteration |
+| [Chapter 3](docs/03-setup/README.md) | Cookbook Python setup and image-saving helper |
+| [Chapter 4](docs/04-generate/README.md) | Ten text-to-image generation use cases |
+| [Chapter 5](docs/05-edit/README.md) | Nine text-plus-image editing use cases |
+| [Chapter 6](docs/06-additional-use-cases/README.md) | Four additional workflows and multi-step examples |
 
-### Generate (text → image)
+Use [prompts/README.md](prompts/README.md) as the prompt index, [cheat-sheet/](cheat-sheet/README.md) for compact references, and [examples/](examples/README.md) for consolidated Python examples.
 
-Infographics | Photorealistic Images | Logo Generation | Ads | Comic Strips | UI Mockups | Scientific Diagrams | Pitch Decks
+## API boundary
 
-### Edit (text + image → image)
+API examples in this repository use only the current `gpt-image-2` Image API endpoints `images.generate` and `images.edit`. Responses API is out of scope. `gpt-image-2` processes image inputs at high fidelity automatically, so the examples and recommendations do not use `input_fidelity`. Follow the [official Image generation guide](https://developers.openai.com/api/docs/guides/image-generation) for current size, quality, background, output-format, and compression rules.
 
-Style Transfer | Virtual Try-On | Drawing→Image | Product Mockups | Marketing Creatives | Lighting/Weather | Object Removal | Person Insertion | Multi-Image Compositing
+## Image asset license
 
-## 🚀 Quick Start
+The image files were downloaded from the OpenAI Cookbook page for documentation and reproducibility. The repository MIT license does not automatically cover OpenAI image assets. See [`docs/assets/official-cookbook/manifest.json`](docs/assets/official-cookbook/manifest.json) for source URLs and hashes.
+
+## Quick start
 
 ```bash
 pip install openai
-export OPENAI_API_KEY="sk-your-api-key-here"
-
-# Generate examples
-python examples/generate_examples.py
-
-# Edit examples (requires input images)
-python examples/edit_examples.py
-
-# Advanced examples (multi-step workflows)
-python examples/advanced_examples.py
 ```
 
-## 📁 Structure
+Set `OPENAI_API_KEY`, then follow [Chapter 3](docs/03-setup/README.md) and [examples/README.md](examples/README.md). Running real API examples consumes quota; this documentation rebuild did not call the image API.
 
-```
-gpt-image-prompting-guide/
-├── prompts/          # Prompt templates (bilingual)
-│   ├── generate/     # Generate prompts (10)
-│   └── edit/         # Edit prompts (9)
-├── examples/         # Python code examples
-├── docs/             # Detailed documentation
-└── cheat-sheet/      # Cheat sheets
-```
+## Contributing
 
-## 📊 API Parameters
-
-| Param | Description | Recommended |
-|-------|-------------|-------------|
-| `model` | Model selection | `"gpt-image-2"` |
-| `quality` | Output quality | `"medium"` / `"high"` |
-| `input_fidelity` | Input fidelity | `"high"` for precision edits |
-| `size` | Output size | `"1024x1024"` / `"1024x1536"` / `"1536x1024"` |
-| `n` | Variants count | `1` / `4` for logos |
-| `background` | Background mode | `"opaque"` for products |
-
-## 🤝 Contributing
-
-PRs welcome! See [Contributing Guide](CONTRIBUTING.md).
-
-## 📄 License
-
-[MIT License](LICENSE)
-
-## 🙏 Credits
-
-- All prompt content sourced from [OpenAI Official Developer Documentation](https://platform.openai.com/docs/guides/image-generation)
-- This project is for educational and reference purposes only
+Read [CONTRIBUTING.md](CONTRIBUTING.md). New material should live in the relevant `docs/` chapter directory rather than creating a second independent prompt corpus.

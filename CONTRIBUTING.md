@@ -1,65 +1,44 @@
-# 贡献指南 | Contributing Guide
+# 贡献指南
 
-感谢你对本项目的关注！以下是参与贡献的方式。
+本项目按 OpenAI Cookbook [GPT Image Generation Models Prompting Guide](https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide) 整理。贡献应保持官方章节目录为唯一正文来源，并明确区分官方内容、中文翻译和本项目补充说明。
 
-## 如何贡献
+## 文档与提示词
 
-### 1. 提交新的提示词模板
+- 新增或修正官方章节内容时，修改对应的 `docs/01-06/**` 目录；
+- 生成、编辑和高级用例分别放在 `docs/04-generate/`、`docs/05-edit/` 和 `docs/06-additional-use-cases/` 下的编号目录；
+- 每个用例应保持 `README.md`、`prompt.md`、`example.py` 和本地图片角色索引的一致性；
+- `prompts/README.md` 只做章节导航，不新增与 `docs/` 重复的完整 prompt 正文；
+- API 内容只使用当前 `gpt-image-2` Image API，不添加 `input_fidelity`、旧模型或未经官方文档确认的字段；
+- 网页版提示词不得混入 Python、SDK 或 API 参数。
 
-如果你发现了好的提示词写法或新的用例场景，欢迎提交：
+## 图片资源
 
-- 在 `prompts/generate/` 或 `prompts/edit/` 目录下创建新的 `.md` 文件
-- 文件名使用小写 kebab-case（如 `my-new-prompt.md`）
-- 按照现有文件的格式模板编写（标题、英文提示词、中文翻译、技巧说明、参数建议）
+官方页面图片必须保留原文件名、格式和字节内容，并在 `docs/assets/official-cookbook/manifest.json` 中记录官方 URL、本地路径、所属章节、输入/输出角色、下载时间和 SHA-256。不要把仓库 MIT 许可证解释为覆盖 OpenAI 图片资产。
 
-### 2. 改进现有提示词
+## Python 示例
 
-如果你发现某个提示词可以优化：
+- 使用 OpenAI Python SDK；
+- 示例必须通过 AST 解析，且不在验证阶段调用真实 API；
+- 输入图片使用 manifest 中的本地官方资源或清晰标注的用户路径；
+- 结果保存代码应处理 `result.data[0].b64_json`；
+- 每个多图输入都要在 prompt 和 README 中说明角色及顺序。
 
-- 直接修改对应的 `.md` 文件
-- 在 PR 中说明改进点和效果对比
+## 验证
 
-### 3. 添加代码示例
+提交前至少运行：
 
-在 `examples/` 目录下添加新的 Python 示例：
+```bash
+python -X utf8 "scripts/sync_official_cookbook_guide.py" --dry-run
+python -X utf8 -m py_compile "scripts/sync_official_cookbook_guide.py"
+git diff --check
+```
 
-- 使用 `openai` SDK
-- 包含完整的参数注释
-- 通过环境变量读取 API Key
-
-### 4. 翻译和文档改进
-
-- 改进中文翻译的准确性
-- 补充文档中的遗漏内容
-- 修复错别字和格式问题
+并检查 6 个主章节、23 个用例、37 个图片哈希、两个 skill 的 `quick_validate.py` 结果。不要提交、推送或调用真实图像 API作为文档验证的一部分。
 
 ## 提交规范
 
-### Commit Message 格式
-
-```
+```text
 <type>(<scope>): <description>
-
-类型:
-- feat: 新功能/新提示词
-- fix: 修复错误
-- docs: 文档改进
-- i18n: 翻译相关
-- refactor: 代码重构
 ```
 
-### PR 流程
-
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/my-feature`)
-3. 提交更改 (`git commit -m 'feat: add new prompt template'`)
-4. 推送到分支 (`git push origin feature/my-feature`)
-5. 创建 Pull Request
-
-## 许可证
-
-本项目采用 MIT 协议。提交贡献即表示你同意你的贡献也遵循 MIT 协议。
-
-## 免责声明
-
-本项目的提示词内容来源于 OpenAI 官方开发者文档，仅供学习和参考使用。
+常用类型：`docs`、`fix`、`i18n`、`refactor`。

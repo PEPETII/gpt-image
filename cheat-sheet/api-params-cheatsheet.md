@@ -1,112 +1,63 @@
-# API 参数速查表 | API Parameters Cheatsheet
+# `gpt-image-2` Image API 参数速查
 
-GPT Image 2 API 参数完整参考。
+事实来源：[OpenAI Image generation](https://developers.openai.com/api/docs/guides/image-generation)。本表只覆盖 Image API 的 `images.generate` 和 `images.edit`，不覆盖 Responses API。
 
----
+## 当前字段
 
-## 参数总表
+| 参数 | 用途 | 推荐规则 |
+|---|---|---|
+| `model` | 模型 | 固定为 `"gpt-image-2"` |
+| `prompt` | 生成或编辑指令 | 必填；使用具体英文自然语言 |
+| `image` | 编辑输入 | 仅 `images.edit` 使用；按 prompt 中的 Image 编号传入 |
+| `size` | 输出尺寸 | `auto` 或符合官方约束的自定义尺寸 |
+| `quality` | 渲染质量 | `low`、`medium`、`high` |
+| `n` | 返回数量 | 默认 `1`，只有明确需要多候选时增加 |
+| `background` | 背景 | `auto` 或 `opaque`；`gpt-image-2` 不支持透明背景 |
+| `output_format` | 输出格式 | 默认 PNG；需要时使用 JPEG 或 WebP |
+| `output_compression` | 压缩 | 只用于 JPEG/WebP，范围 `0`–`100` |
 
-| 参数名 | 类型 | 可选值 | 默认值 | 说明 |
-|--------|------|--------|--------|------|
-| `model` | string | `"gpt-image-2"` | `"gpt-image-2"` | 使用的模型名称 |
-| `prompt` | string | 自由文本 | - | 图像生成/编辑的提示词 |
-| `quality` | string | `"low"`, `"medium"`, `"high"` | `"medium"` | 图像生成质量 |
-| `size` | string | 自定义尺寸 | `"1024x1024"` | 输出图像尺寸（宽x高） |
-| `background` | string | `"transparent"`, `"opaque"` | `"transparent"` | 背景透明度 |
-| `n` | integer | `1` ~ `4` | `1` | 生成候选图像数量 |
-| `input_fidelity` | string | `"low"`, `"medium"`, `"high"` | `"medium"` | 编辑模式下对输入图像的保真度 |
+## 尺寸约束
 
----
+自定义 `size` 必须满足：最大边小于 `3840px`；宽高都是 `16` 的倍数；长短边比例不超过 `3:1`；总像素数在 `655,360` 到 `8,294,400` 之间。超过 `2560x1440` 的尺寸应视为实验性输出。
 
-## quality 参数详解
+常用参考：`1024x1024`、`1024x1536`、`1536x1024`、`2560x1440`。具体用例的官方尺寸以对应章节 `example.py` 为准。
 
-控制生成图像的质量和细节程度。
+## 生成
 
-| 等级 | 适用场景 | 特点 |
-|------|---------|------|
-| `"low"` | 快速预览、草稿、不需要精细细节的场景 | 生成速度最快，细节较少，适合迭代探索 |
-| `"medium"` | 一般用途、大多数生成场景（默认值） | 质量与速度平衡，适合大多数日常需求 |
-| `"high"` | 包含小文本、精细细节、高精度要求的场景 | 最高质量，细节最丰富，适合信息图表、UI 模型、科学图表等 |
+```python
+import base64
+from openai import OpenAI
 
-> **提示**: 当图像中包含文字（text）、图表（charts）、数据可视化（data visualization）或需要高保真细节时，务必使用 `quality="high"`。
+client = OpenAI()
+result = client.images.generate(
+    model="gpt-image-2",
+    prompt="[English prompt]",
+    size="1024x1024",
+    quality="medium",
+)
 
----
+with open("output.png", "wb") as file:
+    file.write(base64.b64decode(result.data[0].b64_json))
+```
 
-## input_fidelity 参数详解
+## 编辑
 
-控制编辑模式下对输入图像的忠实程度。仅在 edit 模式下生效。
+```python
+import base64
+from openai import OpenAI
 
-| 等级 | 适用场景 | 特点 |
-|------|---------|------|
-| `"low"` | 大幅重绘、风格化变换、完全重新想象的场景 | 对原图改动最大，仅保留基本构图或概念 |
-| `"medium"` | 一般编辑、适度修改（默认值） | 在保留原图和接受修改之间取得平衡 |
-| `"high"` | 需要严格保留原图特征的场景 | 最大程度保留原图的面部、姿态、颜色、细节等 |
+client = OpenAI()
+with open("input.png", "rb") as image:
+    result = client.images.edit(
+        model="gpt-image-2",
+        image=[image],
+        prompt="Change only [target]. Preserve [invariants].",
+        size="1024x1024",
+        quality="medium",
+    )
 
-> **提示**: 当需要保持人物身份（面部/体型）、保留产品外观、或仅做局部微调时，使用 `input_fidelity="high"`。
+with open("output.png", "wb") as file:
+    file.write(base64.b64decode(result.data[0].b64_json))
+```
 
----
-
-## size 参数规则
-
-### 约束条件
-
-| 规则 | 说明 |
-|------|------|
-| 最大边长 | 单边不超过 4096 像素 |
-| 像素倍数 | 宽和高都必须是 16 的倍数 |
-| 长宽比 | 宽高比不超过 4:1 或 1:4 |
-| 像素范围 | 总像素数需在合理范围内（建议单边 256 ~ 4096） |
-
-### 常用尺寸表
-
-| 尺寸 | 宽高比 | 适用场景 |
-|------|--------|---------|
-| `1024x1024` | 1:1 | 默认尺寸，通用场景 |
-| `1536x1024` | 3:2 | 横版照片、风景、广告横幅 |
-| `1024x1536` | 2:3 | 竖版照片、海报、手机壁纸 |
-| `2048x1024` | 2:1 | 超宽横幅、社交媒体封面 |
-| `1024x2048` | 1:2 | 超高竖版、信息图表 |
-| `1792x1024` | ~7:4 | 宽屏演示文稿 |
-| `1024x1792` | ~4:7 | 竖版手机 UI 模型 |
-| `2048x2048` | 1:1 | 高分辨率正方形，适合打印 |
-| `4096x4096` | 1:1 | 最高分辨率正方形 |
-
----
-
-## background 参数
-
-| 值 | 适用场景 |
-|----|---------|
-| `"transparent"` | 需要透明背景的叠加场景，如 Logo、贴纸、产品抠图（默认值） |
-| `"opaque"` | 需要实色背景的场景，如 Logo 预览、产品展示、社交媒体发布 |
-
-> **提示**: 生成 Logo 时建议同时使用 `background="opaque"` 和 `n=4` 以获得多个候选方案。
-
----
-
-## n 参数
-
-控制一次请求生成的候选图像数量。
-
-| 值 | 适用场景 |
-|----|---------|
-| `1` | 一般用途，确定性需求（默认值） |
-| `2` ~ `4` | 需要多方案对比的场景，如 Logo 设计、广告创意、品牌探索 |
-
-> **限制**: `n` 最大值为 4。候选数量越多，消耗的 token 越多。
-
----
-
-## Generate vs Edit 模式对比
-
-| 维度 | Generate 模式 | Edit 模式 |
-|------|--------------|-----------|
-| **输入** | 仅文本提示词 (prompt) | 文本提示词 + 输入图像 |
-| **用途** | 从零创建全新图像 | 基于已有图像进行修改 |
-| **核心参数** | quality, size, background, n | quality, size, input_fidelity, n |
-| **input_fidelity** | 不适用 | 控制对原图的保留程度 |
-| **典型场景** | 信息图表、Logo、广告、UI 模型 | 风格迁移、物品移除、人物插入、光照调整 |
-| **提示词重点** | 描述想要什么 | 描述要改变什么 + 不要改变什么 |
-| **多图支持** | 不支持 | 支持传入最多 2 张输入图像 |
-
-> **关键区别**: Edit 模式的提示词应明确区分"要变的部分"和"不变的部分"。使用 `input_fidelity="high"` 可以最大程度保留原图特征。
+图片输入会由 `gpt-image-2` 自动按高保真处理，不传 `input_fidelity`。复杂编辑中，用 prompt 明确 `Change`、`Preserve` 和 `Do not change`。
