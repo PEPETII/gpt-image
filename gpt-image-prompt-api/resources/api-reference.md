@@ -22,7 +22,7 @@
 | `size` | 生成、编辑 | `"auto"` 或满足尺寸约束的自定义尺寸 |
 | `quality` | 生成、编辑 | `"low"`、`"medium"`、`"high"` |
 | `n` | 生成、编辑 | 返回数量；未指定时使用 `1` |
-| `background` | 生成、编辑 | `"auto"` 或 `"opaque"` |
+| `background` | 生成、编辑 | `"auto"` 或 `"opaque"`；对于 `gpt-image-2` 也可以使用 `"transparent"`（预览） |
 | `output_format` | 生成、编辑 | 默认 PNG；需要时使用 `"jpeg"` 或 `"webp"` |
 | `output_compression` | 生成、编辑 | 仅 JPEG/WebP 使用，整数范围 `0`–`100` |
 

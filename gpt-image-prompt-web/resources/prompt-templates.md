@@ -208,9 +208,9 @@ Change only the rendering from drawing to [TARGET MEDIUM]. Do not add, remove, m
 适合抠出产品、白底电商图和透明感不足的边缘修正。必须保持产品几何、颜色、材质、标签和文字；只允许轻微润色与接触阴影。
 
 ```text
-Extract the product from Image 1 and place it centered on a plain white opaque background.
-Change only the background and apply light polishing. Preserve the product's exact geometry, proportions, materials, colors, surface details, label artwork, and label legibility.
-Create a crisp silhouette with no halos, fringing, clipping, or warped edges. Add only a subtle realistic contact shadow. Do not restyle, redesign, recolor, rotate unexpectedly, add text, add logos, or add a watermark.
+Extract the product from Image 1 and isolate it on a fully transparent background.
+Change only the background and apply light polishing. Do not add a solid backdrop, checkerboard, scenery, or shadow. Preserve the product's exact geometry, proportions, materials, colors, surface details, label artwork, and label legibility.
+Create a crisp silhouette with no halos, fringing, clipping, or warped edges. Do not restyle, redesign, recolor, rotate unexpectedly, add text, add logos, or add a watermark; remove the background and preserve clean alpha transparency.
 ```
 
 ### 5.5 带真实文字的营销创意
