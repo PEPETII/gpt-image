@@ -17,6 +17,7 @@ Key Capabilities include:
 - **High-fidelity photorealism** with natural lighting, accurate materials, and rich color rendering
 - **Flexible quality–latency tradeoffs**, allowing faster generation at lower settings while still exceeding the visual quality of prior-generation image models
 - **Robust facial and identity preservation** for edits, character consistency, and multi-step workflows
+- **Transparent-background PNG and WebP assets (preview)** with `gpt-image-2` for reusable logos, product cutouts, stickers, and presentation graphics
 - **Reliable text rendering** with crisp lettering, consistent layout, and strong contrast inside images
 - **Complex structured visuals**, including infographics, diagrams, and multi-panel compositions
 - **Precise style control and style transfer** with minimal prompting, supporting everything from branded design systems to fine-art styles
@@ -32,6 +33,7 @@ This section is a reference for the image models covered in this guide, focused 
 - supported `quality` values
 - supported `input_fidelity` values
 - supported `size` / resolution behavior
+- `background` and `output_format` requirements for transparent assets
 - recommended use cases by workflow
 
 ## Model summary
@@ -44,6 +46,17 @@ As of April 21, 2026, OpenAI has the following image models available.
 | `gpt-image-1.5` | `low`, `medium`, `high` | `low`, `high` | `1024x1024`, `1024x1536`, `1536x1024`, `auto` | Keep for existing validated workflows during migration. For new work, prefer `gpt-image-2`, especially when quality, editing reliability, or flexible sizing matter. |
 | `gpt-image-1` | `low`, `medium`, `high` | `low`, `high` | `1024x1024`, `1024x1536`, `1536x1024`, `auto` | Legacy compatibility only. If you are starting a new workflow or refreshing prompts, move to `gpt-image-2`; keep `gpt-image-1` only when you need short-term stability while validating the upgrade. |
 | `gpt-image-1-mini` | `low`, `medium`, `high` | `low`, `high` | `1024x1024`, `1024x1536`, `1536x1024`, `auto` | Use when cost and throughput are the main constraint: large batch variant generation, rapid ideation, previews, lightweight personalization, and draft assets that do not require the strongest generation or editing performance. |
+
+### Transparent backgrounds with `gpt-image-2` (preview)
+
+Transparent backgrounds are available in preview for `gpt-image-2`. To generate or edit an image with a transparent background:
+
+- Set `background="transparent"`.
+- Set `output_format="png"` (the default) or `output_format="webp"`. Both support transparency; `jpeg` does not.
+- Omit `output_compression` for PNG output. WebP supports optional compression.
+- Explicitly request an isolated subject on a fully transparent background, with no scenery, solid backdrop, checkerboard, or unwanted shadows.
+- For edits, explicitly preserve the transparent background in each prompt so later steps do not introduce a new background.
+- Keep the returned image as a PNG or WebP file and preserve its alpha channel throughout downstream processing.
 
 ### `gpt-image-2` size options
 

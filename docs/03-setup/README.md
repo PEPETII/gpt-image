@@ -16,7 +16,7 @@ Run this once. It:
 - creates `output_images/` in the images folder.
 - adds a small helper to save base64 images
 
-Put any reference images used for edits into `input_images/` (or update the paths in the examples).
+Put any reference images used for edits into `input_images/` (or update the paths in the examples). When saving transparent outputs, use a `.png` or `.webp` extension matching the selected output format and preserve the returned image bytes; converting an RGBA image to RGB discards its transparent background.
 
 ```
 import os

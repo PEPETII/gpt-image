@@ -1,6 +1,6 @@
 {
   "source_url": "https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide",
-  "retrieved_at": "2026-07-15T11:58:24.274828+00:00",
+  "retrieved_at": "2026-09-29T09:02:54.967466+00:00",
   "asset_count": 37,
   "assets": {
     "billboard_gpt-image-2.png": {
@@ -22,7 +22,7 @@
       ],
       "sha256": "33c0a60f62034841b79b33d99acb2063fb810d75e5d2e10eed282df781356562",
       "size_bytes": 2147295,
-      "retrieved_at": "2026-07-15T11:58:23.708422+00:00"
+      "retrieved_at": "2026-09-29T09:02:46.206422+00:00"
     },
     "billboard_winter_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/billboard_winter_gpt-image-2.png",
@@ -38,7 +38,7 @@
       ],
       "sha256": "1eeda30b35693813dd33f79f2ade575acb430a10487980da43e8cddfdbaac5e7",
       "size_bytes": 2658805,
-      "retrieved_at": "2026-07-15T11:58:23.714684+00:00"
+      "retrieved_at": "2026-09-29T09:02:46.551013+00:00"
     },
     "boots.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/boots.png",
@@ -54,7 +54,7 @@
       ],
       "sha256": "1aab97cf06b7b29949738cdb81eccc36de585b1c346ae72856b19158b93c9398",
       "size_bytes": 1128229,
-      "retrieved_at": "2026-07-15T11:58:23.718127+00:00"
+      "retrieved_at": "2026-09-29T09:02:46.699747+00:00"
     },
     "childrens_book_illustration_1_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/childrens_book_illustration_1_gpt-image-2.png",
@@ -70,7 +70,7 @@
       ],
       "sha256": "4a63d1f10f70926dc7b184a70f026e3d23c02be17a9f3191e792a60a889019d7",
       "size_bytes": 3098975,
-      "retrieved_at": "2026-07-15T11:58:23.724610+00:00"
+      "retrieved_at": "2026-09-29T09:02:46.975885+00:00"
     },
     "childrens_book_illustration_2_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/childrens_book_illustration_2_gpt-image-2.png",
@@ -86,7 +86,7 @@
       ],
       "sha256": "dfe05c350e10dada36cc1af2591b459d89450176e95eb74899bb7b330e822236",
       "size_bytes": 3390340,
-      "retrieved_at": "2026-07-15T11:58:23.731801+00:00"
+      "retrieved_at": "2026-09-29T09:02:47.201560+00:00"
     },
     "christmas_collectible_toy_airplane_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/christmas_collectible_toy_airplane_gpt-image-2.png",
@@ -102,7 +102,7 @@
       ],
       "sha256": "0578067d6193a3f4bdc55861c0b00319bfe2258c05618d38d80b831cb68c32ed",
       "size_bytes": 2419766,
-      "retrieved_at": "2026-07-15T11:58:23.737077+00:00"
+      "retrieved_at": "2026-09-29T09:02:47.495117+00:00"
     },
     "christmas_holiday_card_teddy_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/christmas_holiday_card_teddy_gpt-image-2.png",
@@ -118,7 +118,7 @@
       ],
       "sha256": "78c082280464866149f0b06ae60aaccca6747c56d69b208fad6a85cd68c4ea1c",
       "size_bytes": 2316800,
-      "retrieved_at": "2026-07-15T11:58:23.742014+00:00"
+      "retrieved_at": "2026-09-29T09:02:47.657580+00:00"
     },
     "comic_reel-gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/comic_reel-gpt-image-2.png",
@@ -134,7 +134,7 @@
       ],
       "sha256": "16cc15362bed8e7b915d88af6f838a2e5d445cc5d2f3514501b8288664a52aca",
       "size_bytes": 2494672,
-      "retrieved_at": "2026-07-15T11:58:23.747386+00:00"
+      "retrieved_at": "2026-09-29T09:02:47.941070+00:00"
     },
     "drawings.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/drawings.png",
@@ -150,7 +150,7 @@
       ],
       "sha256": "dd2a1d9cff8f621b47a5624a4624daedfc0aed303e8d2a2c4ac699011646360d",
       "size_bytes": 498045,
-      "retrieved_at": "2026-07-15T11:58:23.748829+00:00"
+      "retrieved_at": "2026-09-29T09:02:48.074233+00:00"
     },
     "extract_product_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/extract_product_gpt-image-2.png",
@@ -166,7 +166,7 @@
       ],
       "sha256": "edbc49fa4d1a405eccf20acbd16a23a7581e478e8ac68ba0cd4d9cf938dbb9ea",
       "size_bytes": 799507,
-      "retrieved_at": "2026-07-15T11:58:23.750639+00:00"
+      "retrieved_at": "2026-09-29T09:02:48.315937+00:00"
     },
     "infographic_coffee_machine_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/infographic_coffee_machine_gpt-image-2.png",
@@ -187,7 +187,7 @@
       ],
       "sha256": "72ea79855b20660f0e5c6a7d372a2aaae723dbb1a16b8d8495b828d3bce52cb6",
       "size_bytes": 2306951,
-      "retrieved_at": "2026-07-15T11:58:23.755500+00:00"
+      "retrieved_at": "2026-09-29T09:02:48.476104+00:00"
     },
     "infographic_coffee_machine_sp_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/infographic_coffee_machine_sp_gpt-image-2.png",
@@ -203,7 +203,7 @@
       ],
       "sha256": "cb379cdd6006e7d866e406ebb4f1333e53718706483b1c613ce8cd074a8d916f",
       "size_bytes": 2339576,
-      "retrieved_at": "2026-07-15T11:58:23.761042+00:00"
+      "retrieved_at": "2026-09-29T09:02:48.749042+00:00"
     },
     "jacket.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/jacket.png",
@@ -219,7 +219,7 @@
       ],
       "sha256": "b7e18fa1445d27d85bdaa407eb1d82dbd63c865f4b89b9ee88b795dc31cdb923",
       "size_bytes": 131533,
-      "retrieved_at": "2026-07-15T11:58:23.761979+00:00"
+      "retrieved_at": "2026-09-29T09:02:48.856136+00:00"
     },
     "kitchen-chairs_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/kitchen-chairs_gpt-image-2.png",
@@ -235,7 +235,7 @@
       ],
       "sha256": "a55eca27868c6c78f70f98fa82bba45b3ba29a57f062455a85198b5a3677ed42",
       "size_bytes": 2597172,
-      "retrieved_at": "2026-07-15T11:58:23.768141+00:00"
+      "retrieved_at": "2026-09-29T09:02:49.129485+00:00"
     },
     "kitchen.jpeg": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/kitchen.jpeg",
@@ -251,7 +251,7 @@
       ],
       "sha256": "958e25b5df3125a49ca3c59e2755702e9968b1b0a9b9999a930223491bcf25fb",
       "size_bytes": 398281,
-      "retrieved_at": "2026-07-15T11:58:23.769480+00:00"
+      "retrieved_at": "2026-09-29T09:02:49.286981+00:00"
     },
     "logo_generation_1_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/logo_generation_1_gpt-image-2.png",
@@ -267,7 +267,7 @@
       ],
       "sha256": "d22eabe804c0568a045c1e9b2a9d472929fbd74cfe2c3a6345e2c4bd41a8fd73",
       "size_bytes": 235900,
-      "retrieved_at": "2026-07-15T11:58:23.770193+00:00"
+      "retrieved_at": "2026-09-29T09:02:49.483884+00:00"
     },
     "logo_generation_2_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/logo_generation_2_gpt-image-2.png",
@@ -283,7 +283,7 @@
       ],
       "sha256": "9749bd22e32fefbc4b244bed8c31d1e48f8733eb4b415662007abba3575619dd",
       "size_bytes": 238068,
-      "retrieved_at": "2026-07-15T11:58:23.770837+00:00"
+      "retrieved_at": "2026-09-29T09:02:49.622843+00:00"
     },
     "logo_generation_3_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/logo_generation_3_gpt-image-2.png",
@@ -299,7 +299,7 @@
       ],
       "sha256": "194e57dcd37e0ea232c36f9c8029b44601d949b95910ed490bb80b0dd2cef878",
       "size_bytes": 243821,
-      "retrieved_at": "2026-07-15T11:58:23.771675+00:00"
+      "retrieved_at": "2026-09-29T09:02:49.820054+00:00"
     },
     "logo_generation_4_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/logo_generation_4_gpt-image-2.png",
@@ -315,7 +315,7 @@
       ],
       "sha256": "6c38dc82cc4e9dc012bdbb91b4897bc434b08cc33558cf804029f714b499a009",
       "size_bytes": 307555,
-      "retrieved_at": "2026-07-15T11:58:23.772492+00:00"
+      "retrieved_at": "2026-09-29T09:02:50.117116+00:00"
     },
     "man_with_blue_hat.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/man_with_blue_hat.png",
@@ -331,7 +331,7 @@
       ],
       "sha256": "c3029b00417c66829520a007e2f41f64d70e3c9af5c2859c6b92c9efc2e9eb91",
       "size_bytes": 2067213,
-      "retrieved_at": "2026-07-15T11:58:23.777345+00:00"
+      "retrieved_at": "2026-09-29T09:02:50.363911+00:00"
     },
     "man_with_no_flower_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/man_with_no_flower_gpt-image-2.png",
@@ -347,7 +347,7 @@
       ],
       "sha256": "30cedb04c8a29d61d5894288df282e65b0017b9de7bd56a88fa36bb370cb2fec",
       "size_bytes": 2192728,
-      "retrieved_at": "2026-07-15T11:58:23.782751+00:00"
+      "retrieved_at": "2026-09-29T09:02:50.520106+00:00"
     },
     "market_opportunity_slide_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/market_opportunity_slide_gpt-image-2.png",
@@ -363,7 +363,7 @@
       ],
       "sha256": "3c2f06e6221aa519c6cc5d18f30efb857f1b0842d3a64b249b3d117dc4fb0669",
       "size_bytes": 538512,
-      "retrieved_at": "2026-07-15T11:58:23.784499+00:00"
+      "retrieved_at": "2026-09-29T09:02:50.751684+00:00"
     },
     "motorcycle_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/motorcycle_gpt-image-2.png",
@@ -379,7 +379,7 @@
       ],
       "sha256": "c66e9ac94affa0601c51b1ba833d5e86565e5ec778dbd61e11d0897bf18e11e6",
       "size_bytes": 511989,
-      "retrieved_at": "2026-07-15T11:58:23.785869+00:00"
+      "retrieved_at": "2026-09-29T09:02:50.886989+00:00"
     },
     "outfit_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/outfit_gpt-image-2.png",
@@ -395,7 +395,7 @@
       ],
       "sha256": "12edaf672373de89098c028267948e28dd52b0ebb2995d1dfd6e1cc11b08a097",
       "size_bytes": 2309002,
-      "retrieved_at": "2026-07-15T11:58:23.791227+00:00"
+      "retrieved_at": "2026-09-29T09:02:51.157406+00:00"
     },
     "photorealism-gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/photorealism-gpt-image-2.png",
@@ -411,7 +411,7 @@
       ],
       "sha256": "3ad09d90b61c80665d157718be31946d44803d7456957831c05fd7cbac50c314",
       "size_bytes": 2688221,
-      "retrieved_at": "2026-07-15T11:58:23.797144+00:00"
+      "retrieved_at": "2026-09-29T09:02:51.344224+00:00"
     },
     "pixels.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/pixels.png",
@@ -427,7 +427,7 @@
       ],
       "sha256": "b249e6444f0cd165370de72302e8c25b77c6f98e2ae0c1b35e0e8537f7288784",
       "size_bytes": 334841,
-      "retrieved_at": "2026-07-15T11:58:23.798446+00:00"
+      "retrieved_at": "2026-09-29T09:02:51.554779+00:00"
     },
     "realistic_valley_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/realistic_valley_gpt-image-2.png",
@@ -443,7 +443,7 @@
       ],
       "sha256": "856b806a4114fa4bbce733bcea64a25bef9adb313ffddd8c463c7d214f64a93d",
       "size_bytes": 3118360,
-      "retrieved_at": "2026-07-15T11:58:23.804567+00:00"
+      "retrieved_at": "2026-09-29T09:02:51.735569+00:00"
     },
     "scientific_educational_cellular_respiration_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/scientific_educational_cellular_respiration_gpt-image-2.png",
@@ -459,7 +459,7 @@
       ],
       "sha256": "9d2a8d8a4152750e0ae7879e3a0e4e33e1aa36a508fedc0770ac773aed1620eb",
       "size_bytes": 840293,
-      "retrieved_at": "2026-07-15T11:58:23.806621+00:00"
+      "retrieved_at": "2026-09-29T09:02:51.961886+00:00"
     },
     "shampoo.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/shampoo.png",
@@ -480,7 +480,7 @@
       ],
       "sha256": "2447fb73cd041c06487e4037967cc1c91527d5ac5b95cee54e82b4ce3d8518f1",
       "size_bytes": 239205,
-      "retrieved_at": "2026-07-15T11:58:23.807333+00:00"
+      "retrieved_at": "2026-09-29T09:02:52.078059+00:00"
     },
     "tank_top.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/tank_top.png",
@@ -496,7 +496,7 @@
       ],
       "sha256": "67c46a408dba58fc3b76a1fdf35f9b853fcda7e758e0383081d4c5ff9a640772",
       "size_bytes": 514514,
-      "retrieved_at": "2026-07-15T11:58:23.808483+00:00"
+      "retrieved_at": "2026-09-29T09:02:52.347136+00:00"
     },
     "test_woman.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/test_woman.png",
@@ -512,7 +512,7 @@
       ],
       "sha256": "52048f230c2561fe3ce727778b921809e42d8c5ca31e538675b0bd1f400bc022",
       "size_bytes": 2229875,
-      "retrieved_at": "2026-07-15T11:58:23.813360+00:00"
+      "retrieved_at": "2026-09-29T09:02:52.514803+00:00"
     },
     "test_woman_2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/test_woman_2.png",
@@ -528,7 +528,7 @@
       ],
       "sha256": "162bd5047fc8ee30e352f4b93ab00824ac501815bb5cfe630d22c3a0303a3a6f",
       "size_bytes": 2263097,
-      "retrieved_at": "2026-07-15T11:58:23.818462+00:00"
+      "retrieved_at": "2026-09-29T09:02:52.760211+00:00"
     },
     "test_woman_with_dog_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/test_woman_with_dog_gpt-image-2.png",
@@ -544,7 +544,7 @@
       ],
       "sha256": "2b5462a0e66a27017fb127cfa136149c679825195cd0a5a3400c6a914d45d7be",
       "size_bytes": 2355905,
-      "retrieved_at": "2026-07-15T11:58:23.823616+00:00"
+      "retrieved_at": "2026-09-29T09:02:52.936487+00:00"
     },
     "thread_ad_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/thread_ad_gpt-image-2.png",
@@ -560,7 +560,7 @@
       ],
       "sha256": "c0e2652010aa38bd7043464b85b6f408bea2f3094de701ae906b0972f4d9e29d",
       "size_bytes": 2447835,
-      "retrieved_at": "2026-07-15T11:58:23.828542+00:00"
+      "retrieved_at": "2026-09-29T09:02:53.268407+00:00"
     },
     "ui_farmers_market_gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/ui_farmers_market_gpt-image-2.png",
@@ -576,7 +576,7 @@
       ],
       "sha256": "03d9ed0e0fd9e9a7cf62226e4227c0348e7e24574115ec6d18fe74be69d7d42b",
       "size_bytes": 733823,
-      "retrieved_at": "2026-07-15T11:58:23.830517+00:00"
+      "retrieved_at": "2026-09-29T09:02:53.408366+00:00"
     },
     "woman_in_museum.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/woman_in_museum.png",
@@ -597,7 +597,7 @@
       ],
       "sha256": "1b0af9dcdbadd323718521ed791f702b9a47db7984e8d94eca6ceb82f08c4a78",
       "size_bytes": 2183189,
-      "retrieved_at": "2026-07-15T11:58:23.834971+00:00"
+      "retrieved_at": "2026-09-29T09:02:53.700870+00:00"
     },
     "world_knowledge-gpt-image-2.png": {
       "source_url": "https://developers.openai.com/cookbook/assets/images/world_knowledge-gpt-image-2.png",
@@ -613,7 +613,7 @@
       ],
       "sha256": "c2f93767bbc8867de1ae17c7e0081d815ea9035e2100edbf079948e952872478",
       "size_bytes": 2646096,
-      "retrieved_at": "2026-07-15T11:58:23.840365+00:00"
+      "retrieved_at": "2026-09-29T09:02:53.875485+00:00"
     }
   }
 }
