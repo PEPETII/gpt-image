@@ -118,17 +118,17 @@ Output Image:
 
 ![](../assets/official-cookbook/realistic_valley_gpt-image-2.png)
 
-## 5.4 Product Mockups (clean background + label integrity)
+## 5.4 Product Mockups (transparent background + label integrity)
 
-Product extraction and mockup prep is commonly used for catalogs, marketplaces, and design systems. Success depends on edge quality (clean silhouette, no fringing/halos) and label integrity (text stays sharp and unchanged). For `gpt-image-2`, keep the output background opaque and use a downstream background-removal step if you need a final transparent asset. If you want realism without re-styling, ask for only light polishing and optionally a subtle contact shadow on a plain background.
+Product extraction and mockup prep is commonly used for catalogs, marketplaces, and design systems. Success depends on edge quality (clean silhouette, no fringing/halos) and label integrity (text stays sharp and unchanged). Transparent backgrounds are available in preview for `gpt-image-2`; request `background="transparent"` with `output_format="png"` (the default) or `output_format="webp"` to create a reusable product cutout directly. `jpeg` does not support transparent backgrounds. Ask for an isolated subject, preserve the existing product geometry and label, and omit solid backdrops, checkerboards, and unnecessary shadows. Omit `output_compression` for PNG output; WebP supports optional compression.
 
 ```
 prompt = """
-Extract the product from the input image and place it on a plain white opaque background.
+Extract the product from the input image and isolate it on a fully transparent background.
 Output: centered product, crisp silhouette, no halos/fringing.
 Preserve product geometry and label legibility exactly.
-Add only light polishing and a subtle realistic contact shadow.
-Do not restyle the product; only remove background and lightly polish.
+Add only light polishing. Do not add a solid backdrop, checkerboard, scenery, or shadow.
+Do not restyle the product; remove the background and preserve clean alpha transparency.
 """
 
 result = client.images.edit(
@@ -139,7 +139,8 @@ result = client.images.edit(
     prompt=prompt,
     size="1024x1536",
     quality="medium",
-    background="opaque",
+    background="transparent",
+    output_format="png",
 )
 
 save_image(result, "extract_product_gpt-image-2.png")

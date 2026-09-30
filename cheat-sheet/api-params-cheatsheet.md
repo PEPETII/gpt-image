@@ -12,7 +12,7 @@
 | `size` | 输出尺寸 | `auto` 或符合官方约束的自定义尺寸 |
 | `quality` | 渲染质量 | `low`、`medium`、`high` |
 | `n` | 返回数量 | 默认 `1`，只有明确需要多候选时增加 |
-| `background` | 背景 | `auto` 或 `opaque`；`gpt-image-2` 不支持透明背景 |
+| `background` | 背景 | `auto` 或 `opaque`；`gpt-image-2` 在预览中支持 `transparent` |
 | `output_format` | 输出格式 | 默认 PNG；需要时使用 JPEG 或 WebP |
 | `output_compression` | 压缩 | 只用于 JPEG/WebP，范围 `0`–`100` |
 

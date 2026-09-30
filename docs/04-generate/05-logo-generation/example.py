@@ -21,7 +21,7 @@ prompt = """
 Create an original, non-infringing logo for a company called Field & Flour, a local bakery.
 The logo should feel warm, simple, and timeless. Use clean, vector-like shapes, a strong silhouette, and balanced negative space.
 Favor simplicity over detail so it reads clearly at small and large sizes. Flat design, minimal strokes, no gradients unless essential.
-Plain background. Deliver a single centered logo with generous padding. No watermark.
+Fully transparent background. Deliver a single centered logo with generous padding, clean alpha edges, and no solid backdrop, scenery, checkerboard, or watermark.
 """
 
 result = client.images.generate(
@@ -29,7 +29,9 @@ result = client.images.generate(
     prompt=prompt,
     size="1024x1536",
     quality="medium",
-    n=4     # Generate 4 versions of the logo
+    background="transparent",
+    output_format="png",
+    n=4,    # Generate 4 versions of the logo
 )
 
 # Save all 4 images to separate files

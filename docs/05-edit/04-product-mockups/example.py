@@ -18,11 +18,11 @@ def save_image(result, filename: str) -> None:
     (OUTPUT_DIR / filename).write_bytes(image_bytes)
 
 prompt = """
-Extract the product from the input image and place it on a plain white opaque background.
+Extract the product from the input image and isolate it on a fully transparent background.
 Output: centered product, crisp silhouette, no halos/fringing.
 Preserve product geometry and label legibility exactly.
-Add only light polishing and a subtle realistic contact shadow.
-Do not restyle the product; only remove background and lightly polish.
+Add only light polishing. Do not add a solid backdrop, checkerboard, scenery, or shadow.
+Do not restyle the product; remove the background and preserve clean alpha transparency.
 """
 
 result = client.images.edit(
@@ -33,7 +33,8 @@ result = client.images.edit(
     prompt=prompt,
     size="1024x1536",
     quality="medium",
-    background="opaque",
+    background="transparent",
+    output_format="png",
 )
 
 save_image(result, "extract_product_gpt-image-2.png")
